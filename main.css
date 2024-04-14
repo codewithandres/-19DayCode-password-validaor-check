@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bg-color: hsl(247, 100%, 3%);
+    --color-white: hsl(80, 50%, 98%);
+    --bdr-color: hsl(76, 47%, 89%);
+    --br: 0.5em
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.wrapper {
+    width: 400px;
+    background-color: #03001c;
+    color: var(--color-white);
+    padding: 20px;
+    border-radius: var(--br);
+}
+
+.wrapper .pass-field {
+    height: 50px;
+    width: 100%;
+    position: relative;
+}
+
+.wrapper .pass-field input {
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    outline: none;
+    font-family: inherit;
+    font-size: 1em;
+    background-color: transparent;
+    color: var(--color-white);
+    border-radius: var(--br);
+    border: 1px solid var(--bdr-color)
+}
+
+.pass-field i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    color: var(--bdr-color);
+    cursor: pointer;
+}
+
+
+.wrapper .content {
+    margin: 20px 0 10px;
+}
+
+.content p {
+    font-size: 1.3em;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+}
+
+.requeriment-list li {
+    margin-top: 20px;
+    list-style: none;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.requeriment-list li i.active {
+    transform: scale(0.5px);
+}
+
+.requeriment-list li i {
+    font-size: .9em;
+    color: #d0d6bb;
+    width: 20px;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(1);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.requeriment-list li.isValid i {
+    transform: scale(1.3);
+    color: hsl(212, 100%, 39%);
+}
+
+.requeriment-list li.isValid span {
+    color: hsl(245, 32%, 15%)
+}
+
+.requeriment-list li span {
+    margin-left: 10px;
+    transition: color 200ms linear;
+}
+
+@media screen and (max-width: 500px) {
+
+    body,
+    .wrapper {
+        padding: 15px;
+    }
+
+    .wrapper .pass-field {
+        height: 45px;
+    }
+
+    .pass-field input,
+    .content p {
+        font-size: 1.1em;
+    }
+
+    .pass-field i,
+    .requeriment-list li {
+        font-size: 1.1rem;
+    }
+
+    .requeriment-list span {
+        margin-left: 7px;
+    }
+}
